@@ -1,0 +1,8 @@
+{
+  "suppress_word_completions": false,
+  "suppress_explicit_completions": false,
+  "use_autoimport_improvements": true,
+  "rope_autoimport_modules": [
+    "~/.virtualenvs/passport2.6/lib/python2.6/site-packages/"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+	"auto_upgrade_last_run": 1351454428,
+	"installed_packages":
+	[
+		"Backbone.js",
+		"CoffeeScript",
+		"Djaneiro",
+		"Git",
+		"IPython Integration",
+		"Jade",
+		"Package Control",
+		"Pylinter",
+		"Python Flake8 Lint",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"sublimelint",
+		"SVN",
+		"Theme - Soda",
+		"Twitter Bootstrap Snippets",
+		"ZenCoding"
+	]
+}
