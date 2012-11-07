@@ -8,13 +8,31 @@ class Coffee(Linter):
 	cmd = ('coffee', '--compile', '--stdio')
 	regex = r'^[A-Za-z]+: (?P<error>.+) on line (?P<line>\d+)'
 
-class Java(Linter):
-	language = 'java'
-	cmd = ('javac', '-Xlint')
-	regex = r'^[^:]+:(?P<line>\d+): (?P<error>.*)$'
+class CSS(Linter):
+	language = 'css'
+	cmd = ('csslint',)
+	regex = (
+		r'^\d+: (?P<type>(error|warning)) at line (?P<line>\d+), col (?P<col>\d+)$\W'
+		r'^(?P<error>.*)$'
+	)
+	multiline = True
 
-	def communicate(self, *args):
-		return self.tmpfile(*args, suffix='.java')
+	def communicate(self, cmd, code):
+		return self.tmpfile(cmd, code, suffix='.css')
+
+class HAML(Linter):
+	language = 'ruby haml'
+	cmd = ('haml', '-c')
+	regex = r'^.*line (?P<line>\d+):\s*(?P<error>.+)$'
+
+# this doesn't work very well with projects/imports
+# class Java(Linter):
+# 	language = 'java'
+# 	cmd = ('javac', '-Xlint')
+# 	regex = r'^[^:]+:(?P<line>\d+): (?P<error>.*)$'
+# 
+# 	def communicate(self, *args):
+# 		return self.tmpfile(*args, suffix='.java')
 
 class JavaScript(Linter):
 	language = 'javascript'
@@ -59,3 +77,8 @@ class Ruby(Linter):
 	language = 'ruby'
 	cmd = ('ruby', '-wc')
 	regex = r'^.+:(?P<line>\d+):\s+(?P<error>.+)'
+
+class XML(Linter):
+	language = 'xml'
+	cmd = ('xmllint', '-noout', '-')
+	regex = r'^.+:(?P<line>\d+):\s+(parser error : )?(?P<error>.+)'

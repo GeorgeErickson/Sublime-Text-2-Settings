@@ -1,16 +1,18 @@
 {
-	"auto_upgrade_last_run": 1351454428,
+	"auto_upgrade_last_run": 1352095966,
 	"installed_packages":
 	[
 		"Backbone.js",
 		"CoffeeScript",
 		"Djaneiro",
 		"Git",
+		"Haml",
 		"IPython Integration",
 		"Jade",
 		"Package Control",
 		"Pylinter",
 		"Python Flake8 Lint",
+		"Sass",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"sublimelint",
